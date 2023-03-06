@@ -1,0 +1,146 @@
+body {
+  background-color: #fbb023;
+  color: #0a0400;
+}
+
+header {
+  grid-area: header;
+  text-align: center;
+}
+
+nav {
+  grid-area: nav;
+  font-size: 1.2rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+main {
+  grid-area: main;
+  font-size: large;
+  line-height: 1.8;
+}
+
+img {
+  max-width: 100%;
+  float: left;
+  padding-right: 1rem;
+  /* YOU CAN FLOAT AN ELEMENT WITHIN A GRID AREA */
+}
+
+.sketchfab-embed-wrapper {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'nav nav main main main main'
+    'nav nav main main main main'
+    'nav nav main main main main'
+    'footer footer footer footer footer footer';
+  padding: 1em;
+  max-width: 62em;
+  /* GIVE CONTAINER A WIDTH AND MARGINS IF YOU DO NOT WANT FULL SCREEN */
+  margin: auto;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul {
+  margin-top: 0px;
+  padding-left: 0px;
+  padding-right: 50px;
+}
+
+footer {
+  grid-area: footer;
+  text-align: center;
+  border-radius: 20px;
+  background-color: #0a0400;
+  color: #fbb023;
+  margin-top: 1rem;
+}
+
+#pfooter1 {
+  margin-top: 3px;
+  margin-bottom: 0px;
+}
+
+#pfooter2 {
+  margin-top: 0px;
+  margin-bottom: 3px;
+}
+
+
+
+/*FIRST BREAK POINT === tablet */
+@media only screen and (max-width: 900px) {
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header header nav nav nav'
+      'main main main main main main'
+      'footer footer footer footer footer footer';
+    grid-gap: .5em;
+    padding: .5em;
+  }
+
+  header {
+    font-size: 0.7rem;
+    grid-area: header;
+    text-align: left;
+  }
+
+  nav {
+    margin-top: 0.75rem;
+    text-align: right;
+  }
+
+  ul li {
+    display: inline-block;
+  }
+
+  ul {
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+
+
+  /*SECOND BREAK POINT === mobile */
+  @media only screen and (max-width: 650px) {
+    .grid-container {
+      display: grid;
+      grid-template-areas:
+        'nav nav nav nav nav nav'
+        'main main main main main main'
+        'footer footer footer footer footer footer';
+      grid-gap: .5em;
+      padding: .5em;
+    }
+
+    header {
+      display: none;
+    }
+
+    nav {
+      margin-top: 0.75rem;
+      text-align: center;
+    }
+
+    ul li {
+      display: inline-block;
+    }
+
+    img {
+      display: none;
+      /* AND YOU CAN MAKE THINGS DISAPPEAR WHEN NOT NEEDED */
+    }
+}
